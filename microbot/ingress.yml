@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: microbot-ingress
+  namespace: microbot
+spec:
+  rules:
+    - host: microbot.kazan.schleppe
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: microbot-service
+                port:
+                  number: 80
+
