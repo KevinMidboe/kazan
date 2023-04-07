@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: planet-ingress
+  namespace: planet
+spec:
+  rules:
+    - host: planet.kazan.schleppe
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: planet-frontend-service
+                port:
+                  number: 80
+
