@@ -1,3 +1,4 @@
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -5,7 +6,7 @@ metadata:
   namespace: microbot
 spec:
   rules:
-    - host: microbot.kazan.schleppe
+    - host: microbot.kazan.schleppe.cloud
       http:
         paths:
           - path: /
